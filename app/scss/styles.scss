@@ -1,0 +1,15 @@
+// @import "../bower_components/susy/sass/_susy.scss";
+// with include paths added to the sass option in gulp we can use the syntax below
+@import "susy/sass/susy";
+
+.gulpWorld {
+  color: yellow;
+}
+
+.flex {
+  display: flex;
+}
+
+.susy-test {
+  @include span(2);
+}

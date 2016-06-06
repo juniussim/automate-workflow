@@ -1,0 +1,22 @@
+{% extends "layout.nunjucks" %}
+
+<!-- We can then add HTML code that’s specific to this page between
+block content and endblock
+ -->
+{% block content %}
+
+<h1>This is the index page</h1>
+<div class="gallery">
+    {% for image in images %}
+        <div>
+            <img src="{{image.src}}" alt="{{image.alt}}">
+        </div>
+    {% endfor %}
+</div>
+
+
+{% import 'macros/nav-macro.nunjucks' as nav %}
+<!-- Creating the navigation with activePage = 'home' -->
+{{ nav.active('home') }}
+
+{% endblock %}

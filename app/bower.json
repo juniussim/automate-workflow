@@ -1,0 +1,21 @@
+{
+  "name": "app",
+  "authors": [
+    "Junius Sim <junius.sim@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^2.2.4",
+    "susy": "^2.2.12"
+  }
+}
