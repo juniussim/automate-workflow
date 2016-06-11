@@ -30,9 +30,9 @@ function customPlumber(errTitle){
     // use Plumber to throw error
     return plumber({
       errorHandler: function(err){
-        throw Error(gutil.colors.red(err.message));
+        return Error(gutil.colors.red(err.message));
       }
-    })
+    });
   } else {
     // use Plumber to notify error but not break gulp watch
     return plumber({
