@@ -113,6 +113,16 @@ gulp.task('default', function(callback){
   )
 })
 
+// Default task for Dev-CI
+gulp.task('dev-ci', function(callback){
+  runSequence(
+    'clean:dev',
+    ['lint:js', 'lint:scss'],
+    ['sass','nunjucks'],
+    callback
+  )
+})
+
 // Linter for Javascript
 gulp.task('lint:js', function(){
   return gulp.src('app/js/**/*.js')
