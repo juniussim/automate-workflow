@@ -32,6 +32,5 @@
   },
   "_source": "https://github.com/ericam/susy.git",
   "_target": "^2.2.12",
-  "_originalSource": "susy",
-  "_direct": true
+  "_originalSource": "susy"
 }
