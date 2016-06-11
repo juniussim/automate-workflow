@@ -23,13 +23,24 @@ var scssLint = require('gulp-scss-lint');
 var Server = require('karma').Server
 
 function customPlumber(errTitle){
-  return plumber({
-    errorHandler: notify.onError({
-      // customizing error title
-      title: errTitle || "Error running Gulp",
-      message: "Error: <%= error.message %>",
+  // if on Travis
+  if (process.env.CI) {
+    // use Plumber to throw error
+    return plumber({
+      errorHandler: function(err){
+        throw Error(err.message)
+      }
     })
-  })
+  } else {
+    // use Plumber to notify error but not break gulp watch
+    return plumber({
+      errorHandler: notify.onError({
+        // customizing error title
+        title: errTitle || "Error running Gulp",
+        message: "Error: <%= error.message %>",
+      })
+    })
+  }
 }
 
 gulp.task('sass', function(){
