@@ -21,6 +21,8 @@ var jscs = require('gulp-jscs');
 var scssLint = require('gulp-scss-lint');
 
 var Server = require('karma').Server
+// Making Travis's error message more obvious for Linter errors
+var gutil = require('gulp-util');
 
 function customPlumber(errTitle){
   // if on Travis
@@ -28,7 +30,7 @@ function customPlumber(errTitle){
     // use Plumber to throw error
     return plumber({
       errorHandler: function(err){
-        throw Error(err.message)
+        throw Error(gutil.colors.red(err.message));
       }
     })
   } else {
