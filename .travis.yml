@@ -9,8 +9,8 @@ before_script:
   - "sh -e /etc/init.d/xvfb start"
 install:
   - "npm install"
-  - "npm install bower -g"
-  - "bower install"
+#  - "npm install bower -g"
+#  - "bower install"
   # Install scss_lint gem
   - "gem install scss_lint"
 
