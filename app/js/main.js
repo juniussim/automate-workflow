@@ -3,7 +3,7 @@
 }());
 
 (function() {
-  This function is strict
+  // This function is strict
   'use strict';
   // why do i need use strict for this document ready function
   $(document).ready(function() {

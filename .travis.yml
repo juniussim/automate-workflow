@@ -11,3 +11,5 @@ install:
   - "npm install"
   - "npm install bower -g"
   - "bower install"
+  # Install scss_lint gem
+  - "gem install scss_lint"
